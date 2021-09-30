@@ -105,6 +105,10 @@ li .option0:hover ,li .option1:hover ,li .option2:hover ,li .option3:hover ,#sta
     
 }
 
-#question {}
+.textarea {
+    float: left;
+    
 
-#questionnumber {}
+}
+
+#quizquestion {}

@@ -11,7 +11,7 @@ var textareaEl = document.querySelector(".textarea");
 
 
 var selectedanswer = "";
-var score="";
+var score = "";
 
 
 var myquestions = [{
@@ -25,11 +25,11 @@ var myquestions = [{
     },
     {
         question: 'Which built-in method returns the characters in a string beginning at the specified location?',
-        choise0: "substr()",
+        choise0: "slice()",
         choise1: "getSubstring()",
-        choise2: "slice()",
+        choise2: "substr()",
         choise3: "None of the above.",
-        answer: 0
+        answer: 2
 
     },
     {
@@ -60,7 +60,7 @@ var myquestions = [{
 
     },
 
-   
+
 ]
 
 var secondsLeft = 60;
@@ -91,112 +91,113 @@ function starttimer() {
         }
     }, 1000);
 }
-function startgame() {
-    quizquestionEl.innerHTML=myquestions[0].question
-    option0El.innerHTML =myquestions[0].choise0
-    option1El.innerHTML =myquestions[0].choise1
-    option2El.innerHTML =myquestions[0].choise2
-    option3El.innerHTML =myquestions[0].choise3
 
-    option0El.addEventListener('click', function(){
-        var x = option0El
-        if (myquestions[0].answer == x){
-            textareaEl.innerHTML ="correct"
+function startgame() {
+    quizquestionEl.innerHTML = myquestions[0].question
+    option0El.innerHTML = myquestions[0].choise0
+    option1El.innerHTML = myquestions[0].choise1
+    option2El.innerHTML = myquestions[0].choise2
+    option3El.innerHTML = myquestions[0].choise3
+
+    option0El.addEventListener('click', function () {
+        var x = option0El.value
+        if (myquestions[0].answer == x) {
+            textareaEl.innerHTML = "correct"
             score++;
             newqustion1()
 
-        }else{
-            textareaEl.innerHTML ="wrong" 
-            newqustion1()
-             
-        }
- 
-    })
-    option1El.addEventListener('click', function(){
-        var x = option0El
-        if (myquestions[0].answer == x){
-            textareaEl.innerHTML ="correct"
+        } else {
+            textareaEl.innerHTML = "wrong"
             newqustion1()
 
-        }else{
-            textareaEl.innerHTML ="wrong"
-            newqustion1() 
         }
- 
+
     })
-    option2El.addEventListener('click', function(){
-        var x = option0El
-        if (myquestions[0].answer == x){
-            textareaEl.innerHTML ="correct"
+    option1El.addEventListener('click', function () {
+        var x = option0El.value
+        if (myquestions[0].answer == x) {
+            textareaEl.innerHTML = "correct"
             newqustion1()
 
-        }else{
-            return textareaEl.innerHTML ="wrong"
-            newqustion1() 
+        } else {
+            textareaEl.innerHTML = "wrong"
+            newqustion1()
         }
- 
+
     })
-    option3El.addEventListener('click', function(){
-        var x = option0El
-        if (myquestions[0].answer == x){
-            textareaEl.innerHTML ="correct"
+    option2El.addEventListener('click', function () {
+        var x = option0El.value
+        if (myquestions[0].answer == x) {
+            textareaEl.innerHTML = "correct"
             newqustion1()
 
-        }else{
-            textareaEl.innerHTML ="wrong"
-            newqustion1() 
+        } else {
+            textareaEl.innerHTML = "wrong"
+            newqustion1()
         }
- 
+
+    })
+    option3El.addEventListener('click', function () {
+        var x = option0El
+        if (myquestions[0].answer === x) {
+            textareaEl.innerHTML = "correct"
+            newqustion1()
+
+        } else {
+            textareaEl.innerHTML = "wrong"
+            newqustion1()
+        }
+
     })
 
 }
 
 function newqustion1() {
-    quizquestionEl.innerHTML=myquestions[1].question
-    option0El.innerHTML =myquestions[1].choise0
-    option1El.innerHTML =myquestions[1].choise1
-    option2El.innerHTML =myquestions[1].choise2
-    option3El.innerHTML =myquestions[1].choise3
+    quizquestionEl.innerHTML = myquestions[1].question
+    option0El.innerHTML = myquestions[1].choise0
+    option1El.innerHTML = myquestions[1].choise1
+    option2El.innerHTML = myquestions[1].choise2
+    option3El.innerHTML = myquestions[1].choise3
 
-    option0El.addEventListener('click', function(){
+    option0El.addEventListener('click', function () {
         var x = option0El
-        if (myquestions[0].answer == x){
-            textareaEl.innerHTML ="correct"
+        if (myquestions[1].answer === x) {
+            textareaEl.innerHTML = "correct"
 
-        }else{
-            return textareaEl.innerHTML ="wrong" 
+        } else {
+            textareaEl.innerHTML = "wrong"
         }
- 
+
     })
-    option1El.addEventListener('click', function(){
+    option1El.addEventListener('click', function () {
         var x = option0El
-        if (myquestions[0].answer == x){
-            textareaEl.innerHTML ="correct"
+        if (myquestions[1].answer === x) {
+            textareaEl.innerHTML = "correct"
 
-        }else{
-            return textareaEl.innerHTML ="wrong" 
+        } else {
+            textareaEl.innerHTML = "wrong"
         }
- 
+
     })
-    option2El.addEventListener('click', function(){
-        var x = option0El
-        if (myquestions[0].answer == x){
-            textareaEl.innerHTML ="correct"
+    option2El.addEventListener('click', function () {
+        var x = option2El
+        if (myquestions[1].answer === x) {
+            textareaEl.innerHTML = "correct"
 
-        }else{
-            return textareaEl.innerHTML ="wrong" 
+        } else {
+            textareaEl.innerHTML = "wrong"
         }
- 
+
     })
-    option3El.addEventListener('click', function(){
-        var x = option0El
-        if (myquestions[0].answer == x){
-            textareaEl.innerHTML ="correct"
+    option3El.addEventListener('click', function () {
+        var x = option3El
+        if (myquestions[1].answer === x) {
+            textareaEl.innerHTML = "correct"
 
-        }else{
-            return textareaEl.innerHTML ="wrong" 
+        } else {
+            textareaEl.innerHTML = "wrong"
         }
- 
+
     })
 
 }

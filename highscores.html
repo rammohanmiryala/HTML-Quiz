@@ -6,15 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript fundamental quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <header></header>
+    <header>
+        <h3 id="quiztimer"> Time Left : 00 </h3>
+    </header>
     <main>
-        
-        <div>
+        <!-- quiz box -->
+        <div id="quizbox" style="display:block;">
+            <div>
+                <h1>JavaScript fundamental quiz</h1>
 
+                <p id="quiztext">
+                    The test contains 5 questions and there is <span>5 minutes </span> time limit. The
+                    test is not official, it's just a nice way to see how much you know,
+                    or don't know, about JavaScript.
+                </p>
+            </div>
+            <div>
+                <button id="startbutton">Start quiz</button>
+            </div>
+        </div>
+        <!-- quiz questions -->
+        <div id="quizcard" style="display:none;">
+            <div>
+                              
+                <ol id="quizoption">
+                    <h2 class="quizquestion">Question</h2>
+                    <li><a type = button class="option0">option0</a></li>
+                    <li><a type = button class="option1">option1</a></li>
+                    <li><a type = button class="option2">option2</a></li>
+                    <li><a type = button class="option3">option3</a></li>
+                    <h4 class="textarea"> </h4>
+                </ol>
+            </div>
         </div>
     </main>
     <script src="script.js"></script>
