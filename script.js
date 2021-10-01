@@ -112,23 +112,6 @@ function startquiz() {
 }
 
 
-function stoptimer() {
-    clearInterval(timerInterval);
-    timerInterval
-}
-
-function reducetimer() {
-    setInterval(function () {
-        secondsLeft--;
-        timerInterval = quiztimerEl.textContent = " Time Left : " + (secondsLeft - 10);
-        if (secondsLeft === 0) {
-            clearInterval(timerInterval);
-            // sendMessage();
-
-        }
-
-    }, 1000);
-}
 
 // qustion one-----------------------------------------------------------
 function startgame() {
