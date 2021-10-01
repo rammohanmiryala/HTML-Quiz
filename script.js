@@ -8,10 +8,13 @@ var option1El = document.querySelector(".option1");
 var option2El = document.querySelector(".option2");
 var option3El = document.querySelector(".option3");
 var textareaEl = document.querySelector(".textarea");
+var quizscoreEl = document.querySelector(".quizscore");
+
 
 
 var selectedanswer = "";
 var score = "";
+
 
 
 var myquestions = [{
@@ -29,7 +32,7 @@ var myquestions = [{
         choise1: "getSubstring()",
         choise2: "substr()",
         choise3: "None of the above.",
-        answer: 2
+        answer: 0
 
     },
     {
@@ -60,10 +63,38 @@ var myquestions = [{
 
     },
 
-
 ]
-
+var timerInterval = ""
 var secondsLeft = 60;
+
+
+
+function starttimer() {
+    timerInterval = setTimeout(function () {
+        secondsLeft--;
+        var timer = quiztimerEl.textContent = " Time Left : " + secondsLeft;
+        if (secondsLeft === 0) {
+            clearTimeout(timerInterval);
+            // sendMessage();
+
+        }
+
+    }, 1000);
+}
+
+function reducetimer() {
+    setInterval(function () {
+        secondsLeft--;
+        quiztimerEl.textContent = " Time Left : " + (secondsLeft - 10);
+        if (secondsLeft === 0) {
+            setInterval(timerInterval);
+            // sendMessage();
+
+        }
+
+    }, 1000);
+
+}
 
 function startquiz() {
     var x = document.querySelector("#quizcard");
@@ -80,18 +111,26 @@ function startquiz() {
     }
 }
 
-function starttimer() {
-    var timerInterval = setInterval(function () {
+
+function stoptimer() {
+    clearInterval(timerInterval);
+    timerInterval
+}
+
+function reducetimer() {
+    setInterval(function () {
         secondsLeft--;
-        quiztimerEl.textContent = " Time Left : " + secondsLeft;
+        timerInterval = quiztimerEl.textContent = " Time Left : " + (secondsLeft - 10);
         if (secondsLeft === 0) {
             clearInterval(timerInterval);
             // sendMessage();
 
         }
+
     }, 1000);
 }
 
+// qustion one-----------------------------------------------------------
 function startgame() {
     quizquestionEl.innerHTML = myquestions[0].question
     option0El.innerHTML = myquestions[0].choise0
@@ -100,8 +139,23 @@ function startgame() {
     option3El.innerHTML = myquestions[0].choise3
 
     option0El.addEventListener('click', function () {
-        var x = option0El.value
-        if (myquestions[0].answer == x) {
+        option0El.value = 0
+        if (myquestions[0].answer == option0El.value) {
+            textareaEl.innerHTML = "correct"
+            score++;
+            newqustion1()
+
+        } else {
+            textareaEl.innerHTML = "wrong"
+
+            newqustion1()
+
+        }
+
+    })
+    option1El.addEventListener('click', function () {
+        option1El.value = 1
+        if (myquestions[0].answer == option1El.value) {
             textareaEl.innerHTML = "correct"
             score++;
             newqustion1()
@@ -109,101 +163,197 @@ function startgame() {
         } else {
             textareaEl.innerHTML = "wrong"
             newqustion1()
-
-        }
-
-    })
-    option1El.addEventListener('click', function () {
-        var x = option0El.value
-        if (myquestions[0].answer == x) {
-            textareaEl.innerHTML = "correct"
-            newqustion1()
-
-        } else {
-            textareaEl.innerHTML = "wrong"
-            newqustion1()
+            reducetimer()
         }
 
     })
     option2El.addEventListener('click', function () {
-        var x = option0El.value
-        if (myquestions[0].answer == x) {
+        option2El.value = 2
+        if (myquestions[0].answer == option2El.value) {
             textareaEl.innerHTML = "correct"
+            score++;
             newqustion1()
 
         } else {
             textareaEl.innerHTML = "wrong"
             newqustion1()
+            reducetimer()
+
         }
 
     })
     option3El.addEventListener('click', function () {
-        var x = option0El
-        if (myquestions[0].answer === x) {
+        option3El.value = 3
+        if (myquestions[0].answer == option3El.value) {
             textareaEl.innerHTML = "correct"
+            score++;
             newqustion1()
 
         } else {
             textareaEl.innerHTML = "wrong"
             newqustion1()
+            reducetimer()
+
         }
 
     })
 
 }
-
+// qustion two-----------------------------------------------------------
 function newqustion1() {
+
     quizquestionEl.innerHTML = myquestions[1].question
     option0El.innerHTML = myquestions[1].choise0
     option1El.innerHTML = myquestions[1].choise1
     option2El.innerHTML = myquestions[1].choise2
     option3El.innerHTML = myquestions[1].choise3
 
+
     option0El.addEventListener('click', function () {
-        var x = option0El
-        if (myquestions[1].answer === x) {
+        option0El.value = 0
+        if (myquestions[1].answer == option0El.value) {
             textareaEl.innerHTML = "correct"
+            score++;
+            newqustion2()
 
         } else {
             textareaEl.innerHTML = "wrong"
+            newqustion2()
+            reducetimer()
+
         }
 
     })
     option1El.addEventListener('click', function () {
-        var x = option0El
-        if (myquestions[1].answer === x) {
+        option0El.value = 1
+        if (myquestions[1].answer == option1El.value) {
             textareaEl.innerHTML = "correct"
+            score++;
+            newqustion2()
 
         } else {
             textareaEl.innerHTML = "wrong"
+            newqustion2()
+            reducetimer()
+
         }
 
     })
     option2El.addEventListener('click', function () {
-        var x = option2El
-        if (myquestions[1].answer === x) {
+        option2El.value = 0
+        if (myquestions[1].answer == option2El.value) {
             textareaEl.innerHTML = "correct"
+            score++;
+            newqustion2()
 
         } else {
             textareaEl.innerHTML = "wrong"
+            newqustion2()
+            reducetimer()
+
         }
 
     })
     option3El.addEventListener('click', function () {
-        var x = option3El
-        if (myquestions[1].answer === x) {
+        option3El.value = 3
+        if (myquestions[1].answer == option3El.value) {
             textareaEl.innerHTML = "correct"
+            score++;
+            newqustion2()
 
         } else {
             textareaEl.innerHTML = "wrong"
+            newqustion2()
+            reducetimer()
+
         }
 
     })
 
 }
+// qustion three-----------------------------------------------------------
+function newqustion2() {
+
+    quizquestionEl.innerHTML = myquestions[2].question
+    option0El.innerHTML = myquestions[2].choise0
+    option1El.innerHTML = myquestions[2].choise1
+    option2El.innerHTML = myquestions[2].choise2
+    option3El.innerHTML = myquestions[2].choise3
 
 
-// function startgame() {}
+    option0El.addEventListener('click', function () {
+        option0El.value = 0
+        if (myquestions[2].answer == option0El.value) {
+            textareaEl.innerHTML = "correct"
+            score++;
+            newqustion3()
+
+        } else {
+            textareaEl.innerHTML = "wrong"
+            newqustion3()
+            reducetimer()
+
+        }
+
+    })
+    option1El.addEventListener('click', function () {
+        option0El.value = 1
+        if (myquestions[3].answer == option1El.value) {
+            textareaEl.innerHTML = "correct"
+            score++;
+            newqustion3()
+
+        } else {
+            textareaEl.innerHTML = "wrong"
+            newqustion3()
+            reducetimer()
+
+        }
+
+    })
+    option2El.addEventListener('click', function () {
+        option2El.value = 0
+        if (myquestions[3].answer == option2El.value) {
+            textareaEl.innerHTML = "correct"
+            score++;
+            newqustion3()
+
+        } else {
+            textareaEl.innerHTML = "wrong"
+            newqustion3()
+            reducetimer()
+
+        }
+
+    })
+    option3El.addEventListener('click', function () {
+        option3El.value = 3
+        if (myquestions[3].answer == option3El.value) {
+            textareaEl.innerHTML = "correct"
+            score++;
+            newqustion3()
+
+        } else {
+            textareaEl.innerHTML = "wrong"
+            newqustion3()
+            reducetimer()
+
+        }
+
+    })
+
+}
+// qustion four-----------------------------------------------------------
+function newqustion3() {
+
+}
+
+// qustion four-----------------------------------------------------------
+function newqustion4() {
+
+}
+
+
 startquizBtn.addEventListener("click", startquiz)
 startquizBtn.addEventListener("click", starttimer)
 startquizBtn.addEventListener("click", startgame)
