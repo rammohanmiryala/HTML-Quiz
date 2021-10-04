@@ -14,37 +14,50 @@
 
 <body>
     <header>
-        <h3 id="quiztimer"> Time Left : 00 </h3>
+        
     </header>
     <main>
         <!-- quiz box -->
         <div id="quizbox" style="display:block;">
             <div>
-                <h1>JavaScript fundamental quiz</h1>
+                <h1>Game over</h1>
 
-                <p id="quiztext">
-                    The test contains 5 questions and there is <span>5 minutes </span> time limit. The
-                    test is not official, it's just a nice way to see how much you know,
-                    or don't know, about JavaScript.
+                <p id="quizscore">
+                    Your score : 00
                 </p>
             </div>
-            <div>
-                <button id="startbutton">Start quiz</button>
+            <div id="flexrow">
+                <input type="text" id="initial" name="initial" placeholder = "Initial"><br>
+                <button id="submit">Submit</button>
+                <h4 class="textareamessage"></h4>
             </div>
+
         </div>
-        <!-- quiz questions -->
+        <!-- quiz box -->
         <div id="quizcard" style="display:none;">
-            <div>
-                              
-                <ol id="quizoption">
-                    <h2 class="quizquestion">Question</h2>
-                    <li><a type = button class="option0">option0</a></li>
-                    <li><a type = button class="option1">option1</a></li>
-                    <li><a type = button class="option2">option2</a></li>
-                    <li><a type = button class="option3">option3</a></li>
-                    <h4 class="textarea"> </h4>
-                </ol>
+            <div id="quizoption">
+                <div>
+                    <table width="100%">
+                        <tr>
+                            <th>Initial</th>
+                            <th>score</th>
+
+                        </tr>
+                        <tr>
+                            <td id = "initialname">Initial</th>
+                            <td id = "initialscore">0</th>
+
+
+                        </tr>
+                    </table>
+                </div>
+                <div id="buttonsarea">
+                    <a type=button class="goback">go back</a>
+                    <a type=button class="clear">Clear</a>
+                    
+                </div>
             </div>
+
         </div>
     </main>
     <script src="highscores.js"></script>

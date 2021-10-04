@@ -15,6 +15,8 @@
 <body>
     <header>
         <h3 id="quiztimer"> Time Left : 00 </h3>
+        <h3 id="mainscorequiz"> Score : 00 </h3>
+        
     </header>
     <main>
         <!-- quiz box -->
@@ -23,9 +25,8 @@
                 <h1>JavaScript fundamental quiz</h1>
 
                 <p id="quiztext">
-                    The test contains 5 questions and there is <span>5 minutes </span> time limit. The
-                    test is not official, it's just a nice way to see how much you know,
-                    or don't know, about JavaScript.
+                    The test contains 5 questions and there is <span>60 seconds </span> time limit.for evey wrong answer 5 seconds is subtracted The
+                    test is not official, it's just a nice way to see how much you know,or don't know, about JavaScript.
                 </p>
             </div>
             <div>
@@ -37,7 +38,7 @@
             <div>
                               
                 <ol id="quizoption">
-                    <h4 class="quizscore"> </h4>
+                    
                     <h2 class="quizquestion">Question</h2>
                     <li><a type = button class="option0">option0</a></li>
                     <li><a type = button class="option1">option1</a></li>
@@ -50,6 +51,7 @@
         </div>
     </main>
     <script src="script.js"></script>
+    
 </body>
 
 </html>

@@ -2,8 +2,7 @@
 
 ## About The Project
 
-This project is to generate a random password based on the selection criteria of( upper,lower ,symbol and number)
-
+This project is about creating a quiz for the client. When the user starts the quiz, multiple questions will be shown one after the other when the user clicks the correct or wrong answer, and the score is stored if the user clicks the correct answer. When the user selects the wrong answer, the 5 seconds will be subtracted from the interval remaining. The user needs to enter their initials  and submit them to show the score 
 ## Technologies used
 
 - html
@@ -11,6 +10,7 @@ This project is to generate a random password based on the selection criteria of
 - java script
 
 ## Functionality
+the 
 
 ## Development process
 

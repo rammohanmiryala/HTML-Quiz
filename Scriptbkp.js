@@ -1,6 +1,4 @@
-var score = 0;
-
-
+var score = 0
 
 var startquizBtn = document.querySelector("#startbutton");
 var quizcardEl = document.querySelector("#quizcard");
@@ -13,7 +11,6 @@ var option2El = document.querySelector(".option2");
 var option3El = document.querySelector(".option3");
 var textareaEl = document.querySelector(".textarea");
 var mainscorequizEl = document.querySelector("#mainscorequiz");
-
 
 
 
@@ -41,7 +38,7 @@ var myquestions = [{
         choise1: "Sheryl Sandberg",
         choise2: "Brendan Eich",
         choise3: "None of the above.",
-        answer: 2
+        answer: 0
 
     },
     {
@@ -50,7 +47,7 @@ var myquestions = [{
         choise1: "Server",
         choise2: "Both",
         choise3: "None of the above.",
-        answer: 2
+        answer: 0
 
     },
     {
@@ -59,7 +56,7 @@ var myquestions = [{
         choise1: "Math.min(x,y)",
         choise2: "Math.min(xy)",
         choise3: "min(xy)",
-        answer: 1
+        answer: 0
 
     },
 
@@ -100,7 +97,6 @@ function reducetimer() {
 
 function DisplayScore() {
     mainscorequizEl.textContent = "Your score : " + score;
-
 }
 
 
@@ -120,8 +116,7 @@ function startgame() {
         option0El.value = 0
         if (myquestions[0].answer == option0El.value) {
             textareaEl.innerHTML = "correct"
-            score = 1
-            localStorage.setItem("score", score);
+            score = score + 1
             DisplayScore();
             newqustion1();
         } else {
@@ -135,6 +130,7 @@ function startgame() {
         option1El.value = 1
         if (myquestions[0].answer == option1El.value) {
             textareaEl.innerHTML = "correct"
+            score++;
             newqustion1()
 
         } else {
@@ -148,6 +144,8 @@ function startgame() {
         option2El.value = 2
         if (myquestions[0].answer == option2El.value) {
             textareaEl.innerHTML = "correct"
+            //score++;
+
             newqustion1()
 
         } else {
@@ -163,6 +161,8 @@ function startgame() {
         option3El.value = 3
         if (myquestions[0].answer == option3El.value) {
             textareaEl.innerHTML = "correct"
+            // score++;
+
             newqustion1()
 
         } else {
@@ -186,11 +186,10 @@ function newqustion1() {
     option2El.innerHTML = myquestions[1].choise2
     option3El.innerHTML = myquestions[1].choise3
     option0El.addEventListener('click', function () {
-        option0El.value = 0
+        //option0El.value = 0
         if (myquestions[1].answer == option0El.value) {
             textareaEl.innerHTML = "correct"
             score = score + 1
-            localStorage.setItem("score", score);
             DisplayScore()
             newqustion2()
         } else {
@@ -204,6 +203,7 @@ function newqustion1() {
         option0El.value = 1
         if (myquestions[1].answer == option1El.value) {
             textareaEl.innerHTML = "correct"
+            // score++;
             newqustion2()
 
         } else {
@@ -218,6 +218,7 @@ function newqustion1() {
         option2El.value = 2
         if (myquestions[1].answer == option2El.value) {
             textareaEl.innerHTML = "correct"
+            // score++;
             newqustion2()
 
         } else {
@@ -232,6 +233,7 @@ function newqustion1() {
         option3El.value = 3
         if (myquestions[1].answer == option3El.value) {
             textareaEl.innerHTML = "correct"
+            //score++;
             newqustion2()
 
         } else {
@@ -253,9 +255,10 @@ function newqustion2() {
     option3El.innerHTML = myquestions[2].choise3
 
     option0El.addEventListener('click', function () {
-        option0El.value = 0
+        //option0El.value = 0
         if (myquestions[2].answer == option0El.value) {
             textareaEl.innerHTML = "correct"
+            score = score + 1
             DisplayScore()
             newqustion3()
 
@@ -271,6 +274,7 @@ function newqustion2() {
         option0El.value = 1
         if (myquestions[2].answer == option1El.value) {
             textareaEl.innerHTML = "correct"
+            //score++;
             newqustion3()
 
         } else {
@@ -285,8 +289,7 @@ function newqustion2() {
         option2El.value = 2
         if (myquestions[2].answer == option2El.value) {
             textareaEl.innerHTML = "correct"
-            score = score + 1
-            localStorage.setItem("score", score);
+            //score++;
             newqustion3()
 
         } else {
@@ -301,6 +304,7 @@ function newqustion2() {
         option3El.value = 3
         if (myquestions[2].answer == option3El.value) {
             textareaEl.innerHTML = "correct"
+            //score++;
             newqustion3()
 
         } else {
@@ -324,10 +328,10 @@ function newqustion3() {
     option3El.innerHTML = myquestions[3].choise3
 
     option0El.addEventListener('click', function () {
-        option0El.value = 0
+       // option0El.value = 0
         if (myquestions[3].answer == option0El.value) {
             textareaEl.innerHTML = "correct"
-            
+            score = score + 1
             DisplayScore()
             newqustion4()
 
@@ -344,6 +348,7 @@ function newqustion3() {
         option1El.value = 1
         if (myquestions[3].answer == option1El.value) {
             textareaEl.innerHTML = "correct"
+            //score++;
             newqustion4()
 
         } else {
@@ -358,8 +363,7 @@ function newqustion3() {
         option2El.value = 2
         if (myquestions[3].answer == option2El.value) {
             textareaEl.innerHTML = "correct"
-            score = score + 1
-            localStorage.setItem("score", score);
+
             newqustion4()
 
         } else {
@@ -375,6 +379,7 @@ function newqustion3() {
         option3El.value = 3
         if (myquestions[3].answer == option3El.value) {
             textareaEl.innerHTML = "correct"
+            // score++;
             newqustion4()
 
         } else {
@@ -398,20 +403,18 @@ function newqustion4() {
     option3El.innerHTML = myquestions[4].choise3
 
     option0El.addEventListener('click', function () {
-        option0El.value = 0
+        //option0El.value = 0
         if (myquestions[4].answer == option0El.value) {
             textareaEl.innerHTML = "correct"
             score = score + 1
-            localStorage.setItem("score", score);
-            scorepage()
+            //scorepage()
             DisplayScore()
-
 
 
         } else {
             textareaEl.innerHTML = "wrong"
             reducetimer()
-            scorepage()
+            //scorepage()
             DisplayScore()
         }
 
@@ -472,3 +475,38 @@ function newqustion4() {
 startquizBtn.addEventListener("click", startquiz)
 startquizBtn.addEventListener("click", starttimer)
 startquizBtn.addEventListener("click", startgame)
+
+
+
+function startgame() {
+
+    for (var i = 0; i <= 4; i++) {
+
+        quizquestionEl.innerHTML = myquestions[i].question
+        option0El.innerHTML = myquestions[i].choise0
+        option1El.innerHTML = myquestions[i].choise1
+        option2El.innerHTML = myquestions[i].choise2
+        option3El.innerHTML = myquestions[i].choise3
+
+        option0El.addEventListener('click', function () {
+            textareaEl.innerHTML = "correct"
+            countscore++;
+            DisplayCountScore();
+        })
+        option1El.addEventListener('click', function () {
+            textareaEl.innerHTML = "wrong"
+
+        })
+        option2El.addEventListener('click', function () {
+            textareaEl.innerHTML = "wrong"
+        })
+        option3El.addEventListener('click', function () {
+            textareaEl.innerHTML = "wrong"
+        })
+
+        if (i === 4) {
+            DisplayCountScore();
+        }
+    }
+
+}
