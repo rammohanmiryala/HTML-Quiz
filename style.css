@@ -1,7 +1,7 @@
 body {
 
     margin: 0 auto;
-    padding: 40px;
+    padding: 90px;
     background-color: #faedcd;
     color: #264653;
     font-family: 'Inter', sans-serif;
@@ -190,4 +190,7 @@ table{
     cursor: pointer; 
 
 
+  }
+  header{
+      float: right;
   }

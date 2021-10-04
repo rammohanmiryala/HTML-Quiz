@@ -68,6 +68,8 @@ var myquestions = [{
 
 var secondsLeft = 60;
 
+// start quiz
+
 function startquiz() {
     var x = document.querySelector("#quizcard");
     var y = document.querySelector("#quizbox");
@@ -82,7 +84,7 @@ function startquiz() {
         y.style.display = "block";
     }
 }
-
+// start timer
 function starttimer() {
     timerInterval = setInterval(function () {
         secondsLeft--;
@@ -93,11 +95,11 @@ function starttimer() {
 
     }, 1000);
 }
-
+// reduse start timer
 function reducetimer() {
     secondsLeft = secondsLeft - 5
 }
-
+// display score
 function DisplayScore() {
     mainscorequizEl.textContent = "Your score : " + score;
 
@@ -122,7 +124,6 @@ function startgame() {
             textareaEl.innerHTML = "correct"
             score = 1
             localStorage.setItem("score", score);
-            DisplayScore();
             newqustion1();
         } else {
             textareaEl.innerHTML = "wrong"
@@ -191,7 +192,6 @@ function newqustion1() {
             textareaEl.innerHTML = "correct"
             score = score + 1
             localStorage.setItem("score", score);
-            DisplayScore()
             newqustion2()
         } else {
             textareaEl.innerHTML = "wrong"
@@ -256,7 +256,6 @@ function newqustion2() {
         option0El.value = 0
         if (myquestions[2].answer == option0El.value) {
             textareaEl.innerHTML = "correct"
-            DisplayScore()
             newqustion3()
 
         } else {
@@ -327,8 +326,6 @@ function newqustion3() {
         option0El.value = 0
         if (myquestions[3].answer == option0El.value) {
             textareaEl.innerHTML = "correct"
-            
-            DisplayScore()
             newqustion4()
 
         } else {
@@ -451,7 +448,7 @@ function newqustion4() {
         option3El.value = 3
         if (myquestions[4].answer == option3El.value) {
             textareaEl.innerHTML = "correct"
-            //  score++;
+           //  score++;
             scorepage()
 
         } else {

@@ -30,10 +30,6 @@ function submitinstial() {
     }
 }
 
-// function displayMessage(type, message) {
-//     msgDiv.textContent = message;
-
-// }
 
 function displayMessage(message) {
     textareamessageEl.textContent = message;
@@ -69,11 +65,6 @@ submitBtn.addEventListener("click", function (event) {
 function gobackmain() {
     location.href = "http://192.168.1.126:5500/Javascript-Quiz/index.html"
 }
-
-
-
-
-
 
 function clearall() {
     var clearinstial = localStorage.clear("initialname");

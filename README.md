@@ -1,4 +1,4 @@
-# HTML-Quiz
+# JavaScript-Quiz
 
 ## About The Project
 
@@ -9,13 +9,25 @@ This project is about creating a quiz for the client. When the user starts the q
 - css
 - java script
 
-## Functionality
-the 
+## functionality issues
+- score is not taking correct value
+
 
 ## Development process
+- created the HTML pages
+- given styling for the pages
+- added questions in script.js
+- made the questions displayed on the page
+- added the functionality by clicking the text appears whether the text is correct or wrong answer
+- created high score HTML page
+- given styling to high score page
+- worked on local storage 
+- quiz finished successfully
+
 
 ## The following appearance of the site:
 
-![my portfolio](./assets/website.gif)
+![my portfolio](./assets/quiz.gif)
 
 # URL of the website
+https://rammohanmiryala.github.io/Javascript-Quiz/
