@@ -14,9 +14,7 @@ var option3El = document.querySelector(".option3");
 var textareaEl = document.querySelector(".textarea");
 var mainscorequizEl = document.querySelector("#mainscorequiz");
 
-
-
-
+// quiz questions
 var myquestions = [{
         question: 'Which built-in method combines the text of two strings and returns a new string?',
         choise0: "concat()",
@@ -66,9 +64,7 @@ var myquestions = [{
 ]
 
 
-var secondsLeft = 60;
-
-// start quiz
+var secondsLeft = 60
 
 function startquiz() {
     var x = document.querySelector("#quizcard");
@@ -91,7 +87,13 @@ function starttimer() {
         quiztimerEl.textContent = " Time Left : " + secondsLeft;
         if (secondsLeft === 0) {
             clearInterval(timerInterval);
+            DisplayScore()
         }
+        if (secondsLeft >= 0) {
+            clearInterval(timerInterval);
+            DisplayScore()
+        }
+
 
     }, 1000);
 }
