@@ -14,7 +14,9 @@ var option3El = document.querySelector(".option3");
 var textareaEl = document.querySelector(".textarea");
 var mainscorequizEl = document.querySelector("#mainscorequiz");
 
-// quiz questions
+
+
+
 var myquestions = [{
         question: 'Which built-in method combines the text of two strings and returns a new string?',
         choise0: "concat()",
@@ -64,7 +66,7 @@ var myquestions = [{
 ]
 
 
-var secondsLeft = 60
+var secondsLeft = 60;
 
 function startquiz() {
     var x = document.querySelector("#quizcard");
@@ -80,28 +82,23 @@ function startquiz() {
         y.style.display = "block";
     }
 }
-// start timer
+
 function starttimer() {
     timerInterval = setInterval(function () {
         secondsLeft--;
         quiztimerEl.textContent = " Time Left : " + secondsLeft;
         if (secondsLeft === 0) {
             clearInterval(timerInterval);
-            DisplayScore()
+            scorepage()
         }
-        if (secondsLeft >= 0) {
-            clearInterval(timerInterval);
-            DisplayScore()
-        }
-
 
     }, 1000);
 }
-// reduse start timer
+
 function reducetimer() {
     secondsLeft = secondsLeft - 5
 }
-// display score
+
 function DisplayScore() {
     mainscorequizEl.textContent = "Your score : " + score;
 
@@ -109,7 +106,7 @@ function DisplayScore() {
 
 
 function scorepage() {
-    location.href = "http://192.168.1.126:5500/Javascript-Quiz/highscores.html"
+    location.href = "http://192.168.1.100:5500/Javascript-Quiz/highscores.html"
 }
 
 // qustion one-----------------------------------------------------------
@@ -126,6 +123,7 @@ function startgame() {
             textareaEl.innerHTML = "correct"
             score = 1
             localStorage.setItem("score", score);
+            DisplayScore();
             newqustion1();
         } else {
             textareaEl.innerHTML = "wrong"
@@ -194,6 +192,7 @@ function newqustion1() {
             textareaEl.innerHTML = "correct"
             score = score + 1
             localStorage.setItem("score", score);
+            DisplayScore()
             newqustion2()
         } else {
             textareaEl.innerHTML = "wrong"
@@ -258,6 +257,7 @@ function newqustion2() {
         option0El.value = 0
         if (myquestions[2].answer == option0El.value) {
             textareaEl.innerHTML = "correct"
+            DisplayScore()
             newqustion3()
 
         } else {
@@ -328,6 +328,8 @@ function newqustion3() {
         option0El.value = 0
         if (myquestions[3].answer == option0El.value) {
             textareaEl.innerHTML = "correct"
+            
+            DisplayScore()
             newqustion4()
 
         } else {
@@ -450,14 +452,13 @@ function newqustion4() {
         option3El.value = 3
         if (myquestions[4].answer == option3El.value) {
             textareaEl.innerHTML = "correct"
-           //  score++;
+            //  score++;
             scorepage()
 
         } else {
             textareaEl.innerHTML = "wrong"
             reducetimer()
             scorepage()
-
 
         }
 

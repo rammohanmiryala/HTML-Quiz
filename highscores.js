@@ -14,7 +14,6 @@ var score = localStorage.getItem("score");
 quizscoreEl.textContent = "Your score is " + score;
 
 
-
 function submitinstial() {
     var x = document.querySelector("#quizcard");
     var y = document.querySelector("#quizbox");
@@ -30,11 +29,8 @@ function submitinstial() {
     }
 }
 
-
 function displayMessage(message) {
     textareamessageEl.textContent = message;
-
-
 }
 
 function valuesstored() {
@@ -46,7 +42,6 @@ function valuesstored() {
     }
     initialscoreEl.textContent = score;
     initialnameEl.textContent = initialname;
-
 
 }
 submitBtn.addEventListener("click", function (event) {
@@ -63,13 +58,14 @@ submitBtn.addEventListener("click", function (event) {
 });
 
 function gobackmain() {
-    location.href = "http://192.168.1.126:5500/Javascript-Quiz/index.html"
+    
+    location.href = "http://192.168.1.100:5500/Javascript-Quiz/index.html"
 }
 
 function clearall() {
     var clearinstial = localStorage.clear("initialname");
     var clearinstialscore = localStorage.clear("score");
-    
+
     initialscoreEl.textContent = clearinstial;
     initialnameEl.textContent = clearinstialscore;
 }
