@@ -121,9 +121,8 @@ function startgame() {
         option0El.value = 0
         if (myquestions[0].answer == option0El.value) {
             textareaEl.innerHTML = "correct"
-            score = 1
+            score++
             localStorage.setItem("score", score);
-            DisplayScore();
             newqustion1();
         } else {
             textareaEl.innerHTML = "wrong"
@@ -192,7 +191,7 @@ function newqustion1() {
             textareaEl.innerHTML = "correct"
             score = score + 1
             localStorage.setItem("score", score);
-            DisplayScore()
+            
             newqustion2()
         } else {
             textareaEl.innerHTML = "wrong"
@@ -257,7 +256,7 @@ function newqustion2() {
         option0El.value = 0
         if (myquestions[2].answer == option0El.value) {
             textareaEl.innerHTML = "correct"
-            DisplayScore()
+            
             newqustion3()
 
         } else {
@@ -402,7 +401,7 @@ function newqustion4() {
         option0El.value = 0
         if (myquestions[4].answer == option0El.value) {
             textareaEl.innerHTML = "correct"
-            score = score + 1
+            score++
             localStorage.setItem("score", score);
             scorepage()
             DisplayScore()
